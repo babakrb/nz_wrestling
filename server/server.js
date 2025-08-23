@@ -25,7 +25,7 @@ const upload = multer({ storage });
 const fs = require('fs');
 
 
-const allowedOrigins = ['https://your-frontend-domain.vercel.app'];
+const allowedOrigins = [`${process.env.REACT_APP_FRONTEND_URL}`];
 
 app.use(cors({
   origin: function (origin, callback) {
