@@ -25,8 +25,23 @@ const upload = multer({ storage });
 const fs = require('fs');
 
 
-app.use(cors({ origin: `${process.env.REACT_APP_FRONTEND_URL}`, credentials: true }));
-console.log('Frontend Origin:', process.env.REACT_APP_FRONTEND_URL);
+const allowedOrigins = ['https://your-frontend-domain.vercel.app'];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
+
+
+//app.use(cors({ origin: `${process.env.REACT_APP_FRONTEND_URL}`, credentials: true }));
+//console.log('Frontend Origin:', process.env.REACT_APP_FRONTEND_URL);
 
 app.use(express.json());
 
