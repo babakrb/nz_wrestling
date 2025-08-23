@@ -27,22 +27,22 @@ const fs = require('fs');
 
 const allowedOrigins = ['https://nzwrestling.vercel.app'];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    console.log('🌐 CORS Origin:', origin);
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      console.log('❌ Rejected Origin:', origin);
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true
-}));
+//app.use(cors({
+//origin: function (origin, callback) {
+//    console.log('🌐 CORS Origin:', origin);
+//    if (!origin || allowedOrigins.includes(origin)) {
+//      callback(null, true);
+//    } else {
+//      console.log('❌ Rejected Origin:', origin);
+//      callback(new Error('Not allowed by CORS'));
+//    }
+//  },
+//  credentials: true
+//}));
 
 
-//app.use(cors({ origin: `${process.env.REACT_APP_FRONTEND_URL}`, credentials: true }));
-//console.log('Frontend Origin:', process.env.REACT_APP_FRONTEND_URL);
+app.use(cors({ origin: `${process.env.REACT_APP_FRONTEND_URL}`, credentials: true }));
+console.log('Frontend Origin:', process.env.REACT_APP_FRONTEND_URL);
 
 app.use(express.json());
 
