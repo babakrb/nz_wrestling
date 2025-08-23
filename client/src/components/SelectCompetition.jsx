@@ -31,6 +31,9 @@ const SelectCompetition = () => {
           status: filterStatus
         }
       });
+
+      console.log(res.date.competitions);
+      
       setCompetitions(res.data.competitions);
       setTotalPages(res.data.totalPages);
       setPage(page);
