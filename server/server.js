@@ -29,15 +29,16 @@ const allowedOrigins = ['https://nzwrestling.vercel.app'];
 
 app.use(cors({
   origin: function (origin, callback) {
-    if (allowedOrigins.includes(origin)) {
+    console.log('🌐 CORS Origin:', origin);
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
+      console.log('❌ Rejected Origin:', origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
   credentials: true
 }));
-
 
 
 //app.use(cors({ origin: `${process.env.REACT_APP_FRONTEND_URL}`, credentials: true }));
