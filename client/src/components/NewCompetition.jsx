@@ -44,7 +44,7 @@ const navigate = useNavigate();
     }
 
     try {
-      await axios.post(`${process.env.BACKEND_URL}/api/competitions`, formData, {
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/competitions`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
