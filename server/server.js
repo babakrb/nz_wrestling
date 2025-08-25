@@ -25,7 +25,14 @@ const upload = multer({ storage });
 const fs = require('fs');
 
 
-const allowedOrigins = ['https://nzwrestling.vercel.app'];
+//app.use(cors({ origin: `${process.env.REACT_APP_FRONTEND_URL}`, credentials: true }));
+app.use(cors({
+  origin: process.env.REACT_APP_FRONTEND_URL,
+  credentials: true,
+  maxAge: 3600 // 
+}));
+
+
 
 //app.use(cors({
 //origin: function (origin, callback) {
