@@ -17,7 +17,7 @@ const Register = ({ onRegister }) => {
     }
 
     try {
-      const res = await axios.post(`${process.env.BACKEND_URL}/api/register`, { email, password });
+      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/register`, { email, password });
       if (res.data.success) {
         localStorage.setItem('token', res.data.token);
         onRegister();
