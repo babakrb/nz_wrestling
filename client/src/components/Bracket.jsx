@@ -22,7 +22,7 @@ const Bracket = () => {
 
   const fetchCompetition = async () => {
     try {
-      const res = await axios.get(`${process.env.BACKEND_URL}/api/competitions/${id}`);
+      const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/competitions/${id}`);
       setCompetition(res.data);
     } catch (error) {
       console.error('Error fetching competition:', error);
@@ -31,7 +31,7 @@ const Bracket = () => {
 
   const fetchBrackets = async (page) => {
     try {
-      const res = await axios.get(`${process.env.BACKEND_URL}/api/brackets`, {
+      const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/brackets`, {
         params: {
           competitionId: id,
           page,
