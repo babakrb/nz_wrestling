@@ -21,8 +21,8 @@ const SelectCompetition = () => {
 
   const fetchCompetitions = async (page) => {
     try {
-      console.log('Backend='+`${process.env.BACKEND_URL}`);
-      const res = await axios.get(`${process.env.BACKEND_URL}/api/competitions`, {
+
+      const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/competitions`, {
         params: {
           page,
           limit,
