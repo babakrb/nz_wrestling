@@ -8,7 +8,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    axios.get(`${process.env.BACKEND_URL}/api/dashboard`, {
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/dashboard`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => setMessage(res.data.message))
