@@ -7,6 +7,7 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log('Front='+`${process.env.REACT_APP_FRONTEND_URL}`);
     const token = localStorage.getItem('token');
     axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/dashboard`, {
       headers: { Authorization: `Bearer ${token}` }
