@@ -23,7 +23,7 @@ const returnPath = location.state?.returnPath || '/dashboard'; // مسیر با�
   });
 
   useEffect(() => {
-    axios.get(`${process.env.BACKEND_URL}/api/brackets/${id}`)
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/brackets/${id}`)
       .then(res => {
         const data = res.data;
         setFormData({
@@ -42,7 +42,7 @@ const returnPath = location.state?.returnPath || '/dashboard'; // مسیر با�
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.put(`${process.env.BACKEND_URL}/api/brackets/${id}`, formData)
+    axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/brackets/${id}`, formData)
       //.then(() => navigate('/selectcompetition'))
              .then(() => navigate(returnPath))
          .catch(err => console.error('Error updating bracket:', err));
