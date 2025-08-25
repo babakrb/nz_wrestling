@@ -46,7 +46,7 @@ const SelectCompetition = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this competition?')) {
       try {
-        await axios.delete(`${process.env.BACKEND_URL}/api/competitions/${id}`);
+        await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/competitions/${id}`);
         fetchCompetitions(page);
       } catch (error) {
         console.error('Error deleting competition:', error);
