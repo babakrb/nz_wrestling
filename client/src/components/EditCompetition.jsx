@@ -17,7 +17,7 @@ const EditCompetition = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`${process.env.BACKEND_URL}/api/competitions/${id}`)
+      axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/competitions/${id}`)
         .then(res => {
           const data = res.data;
 		console.log("Current file:", existingFile);
@@ -49,7 +49,7 @@ const EditCompetition = () => {
     if (file) formData.append('file', file);
 
     try {
-      await axios.put(`${process.env.BACKEND_URL}/api/competitions/${id}`, formData, {
+      await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/competitions/${id}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       //alert('Competition updated');
