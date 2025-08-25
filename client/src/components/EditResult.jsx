@@ -23,7 +23,7 @@ const EditResult = () => {
 
   const fetchBracket = async () => {
     try {
-      const res = await axios.get(`${process.env.BACKEND_URL}/api/brackets/${id}`);
+      const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/brackets/${id}`);
     
 
       const data = res.data;
@@ -51,7 +51,7 @@ wrt2Point: data.wrt2Point?.toString() || '',
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`${process.env.BACKEND_URL}/api/brackets/${id}`, form);
+      await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/brackets/${id}`, form);
       navigate(-1);
     } catch (err) {
       console.error('Failed to update result', err);
