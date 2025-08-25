@@ -7,10 +7,11 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log('Front='+`${process.env.REACT_APP_FRONTEND_URL}`);
+    console.log(`Front=${process.env.REACT_APP_FRONTEND_URL}`);
     const token = localStorage.getItem('token');
     axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/dashboard`, {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${token}` },
+      withCredentials: true
     })
       .then(res => setMessage(res.data.message))
       .catch(() => setMessage('Access denied'));
