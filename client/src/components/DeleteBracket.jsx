@@ -11,7 +11,7 @@ const DeleteBracket = () => {
   useEffect(() => {
     const fetchBracket = async () => {
       try {
-        const res = await axios.get(`${process.env.BACKEND_URL}/api/brackets/${id}`);
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/brackets/${id}`);
         setBracket(res.data);
       } catch (err) {
         console.error('Failed to fetch bracket', err);
@@ -22,7 +22,7 @@ const DeleteBracket = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`${process.env.BACKEND_URL}/api/brackets/${id}`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/brackets/${id}`);
       navigate(-1); // بازگشت به صفحه قبلی
     } catch (err) {
       console.error('Error deleting bracket:', err);
