@@ -29,7 +29,7 @@ const Dashboard = () => {
   const goToEditCompetition = () => {
     navigate('/EditCompetition');
   };
-console.log(`Front=${process.env.REACT_APP_FRONTEND_URL}`);
+//console.log(`Front=${process.env.REACT_APP_FRONTEND_URL}`);
 
   return (
     <div className="container my-5">
