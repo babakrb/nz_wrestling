@@ -28,7 +28,7 @@ const App = () => {
   useEffect(() => {
     const checkToken = async () => {
       const token = localStorage.getItem('token');
-		console.log("Token:", token);
+		//console.log("Token:", token);
       if (!token) return;
 
       try {
