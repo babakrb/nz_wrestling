@@ -33,7 +33,7 @@ const SelectCompetition = () => {
         }
       });
 
-      console.log(res.date.competitions);
+      console.log(res.data.competitions);
       
       setCompetitions(res.data.competitions);
       setTotalPages(res.data.totalPages);
